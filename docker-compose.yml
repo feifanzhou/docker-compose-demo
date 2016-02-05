@@ -1,0 +1,22 @@
+mysql:
+  image: mysql:5.6.23
+  env_file:
+    - magento/env
+
+phpMyAdmin:
+  image: corbinu/docker-phpmyadmin
+  links:
+    - mysql
+  ports:
+    - 8181:80
+  env_file:
+    - magento/env
+
+magento:
+  build: ./magento/
+  ports:
+    - 80:80
+  links:
+    - mysql
+  env_file:
+    - magento/env

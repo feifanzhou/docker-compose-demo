@@ -1,0 +1,142 @@
+[
+  {
+    "volumesFrom": [],
+    "memory": 486,
+    "extraHosts": [],
+    "dnsServers": [],
+    "disableNetworking": null,
+    "dnsSearchDomains": [],
+    "portMappings": [],
+    "hostname": null,
+    "essential": true,
+    "entryPoint": [],
+    "mountPoints": [],
+    "name": "mysql",
+    "ulimits": [],
+    "dockerSecurityOptions": [],
+    "environment": [
+      {
+        "name": "MYSQL_DATABASE",
+        "value": "magento"
+      },
+      {
+        "name": "MYSQL_PASSWORD",
+        "value": "magento"
+      },
+      {
+        "name": "MYSQL_USER",
+        "value": "magento"
+      },
+      {
+        "name": "MYSQL_HOST",
+        "value": "mysql"
+      },
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "value": "H3110_W0R1D!"
+      }
+    ],
+    "links": [],
+    "workingDirectory": null,
+    "readonlyRootFilesystem": false,
+    "image": "mysql:5.6.23",
+    "command": [],
+    "user": null,
+    "dockerLabels": {},
+    "logConfiguration": null,
+    "cpu": 0,
+    "privileged": false
+  },
+  {
+    "volumesFrom": [],
+    "memory": 486,
+    "extraHosts": [],
+    "dnsServers": [],
+    "disableNetworking": null,
+    "dnsSearchDomains": [],
+    "portMappings": [
+      {
+        "hostPort": 80,
+        "containerPort": 80,
+        "protocol": "tcp"
+      }
+    ],
+    "hostname": null,
+    "essential": true,
+    "entryPoint": [],
+    "mountPoints": [],
+    "name": "magento",
+    "ulimits": [],
+    "dockerSecurityOptions": [],
+    "environment": [
+      {
+        "name": "MAGENTO_ADMIN_EMAIL",
+        "value": "feifan@me.com"
+      },
+      {
+        "name": "MYSQL_DATABASE",
+        "value": "magento"
+      },
+      {
+        "name": "MAGENTO_ADMIN_LASTNAME",
+        "value": "MyStore"
+      },
+      {
+        "name": "MYSQL_PASSWORD",
+        "value": "magento"
+      },
+      {
+        "name": "MAGENTO_ADMIN_PASSWORD",
+        "value": "magentorocks1"
+      },
+      {
+        "name": "MYSQL_USER",
+        "value": "magento"
+      },
+      {
+        "name": "MAGENTO_TIMEZONE",
+        "value": "America/Los_Angeles"
+      },
+      {
+        "name": "MAGENTO_LOCALE",
+        "value": "en_US"
+      },
+      {
+        "name": "MYSQL_HOST",
+        "value": "mysql"
+      },
+      {
+        "name": "MAGENTO_ADMIN_FIRSTNAME",
+        "value": "Admin"
+      },
+      {
+        "name": "MAGENTO_DEFAULT_CURRENCY",
+        "value": "USD"
+      },
+      {
+        "name": "MYSQL_ROOT_PASSWORD",
+        "value": "H3110_W0R1D!"
+      },
+      {
+        "name": "MAGENTO_ADMIN_USERNAME",
+        "value": "admin"
+      },
+      {
+        "name": "MAGENTO_URL",
+        "value": "http://dcd.wht.tf"
+      }
+    ],
+    "links": [
+      "mysql"
+    ],
+    "workingDirectory": null,
+    "readonlyRootFilesystem": false,
+    "image": "feifanz/dockercomposedemo_magento:v1",
+    "command": ["apache2-foreground"],
+    "user": null,
+    "dockerLabels": {},
+    "logConfiguration": null,
+    "cpu": 0,
+    "privileged": false
+  }
+]
